@@ -1,0 +1,14 @@
+version: '2'
+services:
+  jenkins:
+    image: 'jenkins:latest'
+    container_name: 'jenkins'
+    ports:
+      - '8051:8080'
+      - '443:8443'
+      - '50000:50000'
+    volumes:
+      - 'jenkins_data:/var/jenkins'
+volumes:
+  jenkins_data:
+    driver: local
